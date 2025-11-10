@@ -1,0 +1,35 @@
+!ys-0
+
+use: github:schemays/schemays  # imports deft
+# imports: irng imin bool u32 alpha alnum ALPHA ALNUM
+use: github:schemays/common
+
+# Define a named "email" type
+deft email::
+  -name: Email address
+  -like: "[$ALNUM._%+-]+@[$ALNUM.-]+\\.[$ALPHA]{2,}"
+
+# Define user schema
+deft user::
+  -name: User profile
+
+  # Extend the unsigned int32 w/ >1 constraint
+  id:
+    +u32 : Unique identifier
+    -imin: 1
+
+  # Define anonymous "username" type in place
+  username:
+    -name: Unique username
+    -like: "[$alpha][]*(-[+alnum]+)*"
+
+  # Type is single or multiple (0-n) emails
+  email*?: email
+
+  # Integer range
+  age?:
+    -name: Age
+    -irng: 5-120
+
+  isActive:
+    +bool: Account is active

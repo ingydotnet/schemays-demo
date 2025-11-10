@@ -1,0 +1,10 @@
+# Optional document level tag to associate this YAML file with a schema:
+!yaml;./userschema.yaml
+
+user: kuber-netes
+id: 42
+email:
+- kuber@netes.io
+- name@kubernetes.io
+age: 10
+isActive: true

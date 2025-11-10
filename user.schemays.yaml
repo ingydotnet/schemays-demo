@@ -1,0 +1,23 @@
+!ys-0
+
+use: github:schemays/schemays
+use: github:schemays/common
+
+deft email::
+  -name: Email address
+  -like: "[$ALNUM._%+-]+@[$ALNUM.-]+\\.[$ALPHA]{2,}"
+
+deft user::
+  -name: User profile
+  id:
+    +u32 : Unique identifier
+    -imin: 1
+  username:
+    -name: Unique username
+    -like: "[$alpha][]*(-[+alnum]+)*"
+  email*?: email
+  age?:
+    -name: Age
+    -irng: 5-120
+  isActive:
+    +bool: Account is active
