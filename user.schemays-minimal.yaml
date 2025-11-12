@@ -1,0 +1,11 @@
+!yaml;github:schemays/schemays-common@v123
+
+# Define a user profile schema:
+deft user::
+  -name: User profile
+  id: 1-U32MAX
+  username: username
+  email*?: email
+  age?: 5-120
+  isActive:
+    +bool: Account is active

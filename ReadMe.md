@@ -28,10 +28,11 @@ SchemaYS can:
 * Generate the JSON Schema if you want to use that for validation
   * Use for SchemaYS for JSON Schema like YAML is used for JSON
 * Provides a way to associate YAML files with schema (file or url)
+  * Optional top level tag
 * Can define new complex constraints
   * Anything a programming language could do
 * New schemas import and extend existing ones
-* Do everything JSON Schema does an
+* Do everything JSON Schema does
 * Define and compose schemas/types inline and externally
 * Will soon be optionally available in go-yaml, PyYAML, libyaml based YAMLs
   * Applications using these can choose if and when validation happens
